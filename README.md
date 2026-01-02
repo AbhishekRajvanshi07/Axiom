@@ -58,13 +58,13 @@ The layout automatically adapts using Tailwind CSS breakpoints, ensuring:
 ### Screenshots
 
 **Desktop**
-![Desktop View](public/screenshots/desktop.png)
+![Desktop View](public/screenshot/desktop.png)
 
 **Tablet**
-![Tablet View](public/screenshots/tablet.png)
+![Tablet View](public/screenshot/tablet.png)
 
 **Mobile (320px)**
-![Mobile View](public/screenshots/mobile-320.png)
+![Mobile View](public/screenshot/mobile.png)
 
 ---
 

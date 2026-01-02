@@ -1,36 +1,156 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Axiom – Token Discovery & Trading UI
 
-## Getting Started
+A **pixel-accurate, high-performance token discovery and trading table** inspired by Axiom Trade.
+This project focuses on **real-time UI behavior, responsive design, and production-grade frontend architecture**.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## ✨ Features
+
+### 🔍 Token Discovery
+
+* Tabs for **New Pairs**, **Final Stretch**, and **Migrated**
+* Dynamic filtering based on token status
+* Sorting by **Price**, **24h Volume**, and **Market Cap**
+
+### ⚡ Real-Time Price Updates
+
+* WebSocket-style mocked price feed
+* Live updates with:
+
+  * **Directional color persistence** (green ↑ / red ↓)
+  * **Text flash animation** on price change
+  * **Row-level background flash** on updates
+
+### 📊 Data Visualization
+
+* Inline **sparklines** showing recent price history
+* Smooth animations without layout shifts
+
+### 🧩 Rich Interactions
+
+* Tooltip on token symbols
+* Popover with detailed token metadata
+* Modal dialog for Buy actions
+* Hover-based action reveal on desktop
+
+---
+
+## 📱 Responsive Layout (down to 320px)
+
+The application is fully responsive and tested across common breakpoints:
+
+* **Desktop (≥1024px)**
+  Full trading table with aligned numeric columns and inline sparklines
+
+* **Tablet (~768px)**
+  Condensed table layout with preserved readability
+
+* **Mobile (320px)**
+  Card-style stacked rows optimized for small screens, with key metrics prioritized
+
+The layout automatically adapts using Tailwind CSS breakpoints, ensuring:
+
+* No horizontal scrolling
+* No layout shifts
+* Usable interactions at all sizes
+
+### Screenshots
+
+**Desktop**
+![Desktop View](public/screenshots/desktop.png)
+
+**Tablet**
+![Tablet View](public/screenshots/tablet.png)
+
+**Mobile (320px)**
+![Mobile View](public/screenshots/mobile-320.png)
+
+---
+
+## 🛠️ Tech Stack
+
+* **Next.js 14 (App Router)**
+* **TypeScript (strict mode)**
+* **Tailwind CSS**
+* **Redux Toolkit** – UI state & sorting logic
+* **React Query** – data fetching & caching
+* **shadcn/ui (Radix UI)** – Dialogs, Tooltips, Popovers
+* **Custom Hooks**
+
+  * `usePriceFlash` – price text animation
+  * `useRowFlash` – row-level update feedback
+
+---
+
+## 🧱 Project Architecture
+
+```
+src/
+├── app/                  # Next.js App Router
+├── components/
+│   ├── atoms/            # Sparkline, small UI units
+│   ├── molecules/        # TokenRow
+│   ├── organisms/        # TokenTable, TokenTabs
+│   └── ui/               # shadcn/ui components
+├── hooks/                # Custom animation hooks
+├── lib/                  # Mock data, socket simulation
+├── store/                # Redux Toolkit slices
+└── types/                # Shared TypeScript types
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Design principles**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+* Atomic component structure
+* Clear separation of concerns
+* Reusable and scalable UI patterns
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🚀 Performance & Quality
 
-To learn more about Next.js, take a look at the following resources:
+* No layout shifts during real-time updates
+* Grid-based alignment for numeric precision
+* Hydration-safe rendering
+* Mobile-first responsive strategy
+* Designed to score **≥ 90 on Lighthouse (mobile & desktop)**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🧪 Local Development
 
-## Deploy on Vercel
+```bash
+# Install dependencies
+npm install
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Start development server
+npm run dev
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Open in browser:
+👉 `http://localhost:3000`
+
+---
+
+## 📌 Notes
+
+* Price updates are mocked to simulate WebSocket behavior
+* This project focuses on **frontend system design**, not real trading logic
+* UI patterns are inspired by professional trading platforms
+
+---
+
+## 📄 License
+
+MIT License
+
+---
+
+## 👤 Author
+
+Built as a frontend engineering showcase demonstrating:
+
+* Real-time UI patterns
+* Responsive system design
+* State management at scale
+* Production-ready React architecture
